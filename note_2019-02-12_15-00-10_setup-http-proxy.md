@@ -136,3 +136,8 @@ CTRL MAJ A > Http proxy
 	</settings>
 
 
+## Gradle wrapper
+
+  export DEFAULT_JVM_OPTS="-Dhttp.proxyHost=${PROXY_HOST} -Dhttp.proxyPort=${PROXY_PORT} -Dhttp.proxyUser=${PROXY_USER} -Dhttp.proxyPassword=${PROXY_PASSWORD}"
+
+
