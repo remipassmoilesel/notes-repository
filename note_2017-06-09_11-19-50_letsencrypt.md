@@ -19,6 +19,8 @@ Créer une configuration Apache basique et l'activer:
 
 	$ sudo a2ensite example.conf
 
+La configuration doit servir un dossier statique, et ne pas faire de redirection.
+
 Créer un certificat et configurer automatiquement Apache 2:
 
 	$ sudo certbot -d example.com -d www.example.com

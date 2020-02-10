@@ -44,4 +44,48 @@ Système de réservation	Booking Calendar 7.0
 (Dézipper le plugin dans wp-content/plugin)
 
 
+## Configuration d'un proxy
+
+Exemple:
+
+	<VirtualHost *:80>
+
+	  ServerName website-name.fr
+	  DocumentRoot /var/www/empty
+
+	  LogLevel info
+
+	  ErrorLog ${APACHE_LOG_DIR}/website-name/error.log
+	  CustomLog ${APACHE_LOG_DIR}/website-name/access.log combined
+
+	  Redirect / https://website-name.fr/
+
+	</VirtualHost>
+
+	<VirtualHost *:443>
+
+	  ServerName website-name.fr
+	  ServerAlias www.website-name.fr
+
+	  DocumentRoot /var/www/empty
+
+	  LogLevel info
+
+	  ErrorLog ${APACHE_LOG_DIR}/website-name/error.log
+	  CustomLog ${APACHE_LOG_DIR}/website-name/access.log combined
+
+	  Include /etc/letsencrypt/options-ssl-apache.conf
+	  SSLCertificateFile /etc/letsencrypt/live/website-name.fr/fullchain.pem
+	  SSLCertificateKeyFile /etc/letsencrypt/live/website-name.fr/privkey.pem
+
+	  ProxyPass "/"  "http://localhost:8000/"
+	  ProxyPassReverse "/"  "http://localhost:8000/"
+	  
+	  # Ces options permette d'activer la prise en charge TLS par Wordpress
+	  RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+	  ProxyPreserveHost On
+
+	</VirtualHost>
+
+
 
