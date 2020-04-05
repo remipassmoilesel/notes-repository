@@ -26,6 +26,16 @@ Désactiver la souris:
 	vm.swappiness=10
 
 
+## Correction orthographique
+
+	$ sudo pacman -S aspell-fr libmythes mythes-fr languagetool
+
+
+## Activer trim pour les disques SSD
+
+	$ sudo systemctl enable fstrim.timer
+
+
 ### Utilisation des Arch User Repositories
 
 Installer base-devel:
@@ -50,7 +60,7 @@ A l'aide de la détection de matériel Manjaro:
 
 ### Setup HP Omen
 
-Pour utiliser deux écrans, installer optimus-manager et activer la carte Nvidia:
+Pour utiliser un deuxième écran via le port HDMI de la carte graphique, installer optimus-manager et activer la carte Nvidia:
 
 	$ sudo pacman -S optimus-manager
 	$ sudo reboot now
@@ -64,4 +74,22 @@ Polices emoticone:
 
 	$ yay -S ttf-twemoji-color ttf-symbola
 	$ sudo pacman -S ttf-joypixels
+
+
+### Docker
+
+	$ sudo pacman -S docker docker-compose
+
+
+### Kubectl
+
+	$ sudo pacman -S kubectl
+
+
+### Java
+
+	$ sudo pacman -S jdk-openjdk
+	$ archlinux-java status
+	$ archlinux-java set jdk-openjdk
+
 
