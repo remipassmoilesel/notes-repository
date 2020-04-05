@@ -93,3 +93,13 @@ Polices emoticone:
 	$ archlinux-java set jdk-openjdk
 
 
+### NodeJS
+
+Avec la variable d'environnement N_PREFIX pointant vers $HOME:
+
+	$ curl -L https://raw.githubusercontent.com/tj/n/master/bin/n -o n
+	$ sudo mv n /usr/local/bin
+	$ sudo chmod +x /usr/local/bin/n
+	$ n stable
+
+
