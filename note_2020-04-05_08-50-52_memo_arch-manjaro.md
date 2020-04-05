@@ -5,6 +5,27 @@
 Privilégier une installation avec connexion internet pour la configuration du matériel.
 
 
+### Installer VIM
+
+Installation:
+
+	$ sudo pacman -S vim
+
+
+Désactiver la souris:
+
+	$ vim ~/.vimrc 
+
+	set mouse-=a
+
+
+### Réduire le seuil de swap
+
+	$ sudo vim /etc/sysctl.d/100-manjaro.conf
+	
+	vm.swappiness=10
+
+
 ### Utilisation des Arch User Repositories
 
 Installer base-devel:
