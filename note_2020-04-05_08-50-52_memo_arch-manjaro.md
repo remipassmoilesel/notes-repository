@@ -1,5 +1,32 @@
 # Memo Arch Linux / Manjaro
 
+## Pacman
+
+Mise à jour du système:
+
+	$ sudo pacman -Syu
+
+
+Chercher un paquet:
+
+	$ pacman -Ss <query>
+
+
+Informations sur un paquet:
+
+	$ pacman -Qi <pkg>
+
+
+Installer un paquet:
+
+	$ sudo pacman -S <pkg>
+
+
+Supprimer un paquet:
+
+	$ sudo pacman -Rs <pkg>
+
+
 ## Installation
 
 Privilégier une installation avec connexion internet pour la configuration du matériel.
