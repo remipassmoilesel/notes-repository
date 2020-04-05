@@ -103,3 +103,9 @@ Avec la variable d'environnement N_PREFIX pointant vers $HOME:
 	$ n stable
 
 
+### Emulateur de terminal drop down XFCE
+
+Créer un raccourci clavier lié à la commande:
+
+	$ xfce4-terminal --drop-down
+
