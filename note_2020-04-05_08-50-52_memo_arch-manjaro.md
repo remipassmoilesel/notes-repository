@@ -90,8 +90,8 @@ Polices emoticone:
 
 	$ sudo pacman -S jdk-openjdk
 	$ archlinux-java status
-	$ archlinux-java set jdk-openjdk
-
+	$ archlinux-java set java-13-openjdk
+	
 
 ### NodeJS
 
