@@ -26,7 +26,7 @@ Configuration:
 
 Paquets:
 
-	$ sudo pacman -S sane iscan iscan-data
+	$ sudo pacman -S sane xsane iscan iscan-data
 
 
 Lister les scanners disponibles:
