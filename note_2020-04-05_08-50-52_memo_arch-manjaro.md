@@ -27,6 +27,11 @@ Supprimer un paquet:
 	$ sudo pacman -Rs <pkg>
 
 
+Supprimer les paquets non utiles:
+
+	$ pacman -Rsn $(pacman -Qdtq)
+
+
 ## Installation
 
 Privilégier une installation avec connexion internet pour la configuration du matériel.
