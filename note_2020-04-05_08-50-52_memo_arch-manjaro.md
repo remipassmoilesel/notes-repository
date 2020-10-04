@@ -32,6 +32,11 @@ Supprimer les paquets non utiles:
 	$ pacman -Rsn $(pacman -Qdtq)
 
 
+## Paquets utiles
+
+	base-devel
+
+
 ## Installation
 
 Privilégier une installation avec connexion internet pour la configuration du matériel.
