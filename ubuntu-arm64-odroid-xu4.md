@@ -31,5 +31,16 @@ Identifiants par défaut:
 	odroid
 
 
+Identifier les partitions, fdisk sur le disque externe:
+
+	$ lsblk
+	$ sudo fdisk /dev/sda
+
+	> n
+	> primary +60G
+	> n
+	> primary last sector
+	> w
+
 
 
