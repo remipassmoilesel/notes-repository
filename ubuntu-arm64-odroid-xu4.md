@@ -43,4 +43,22 @@ Identifier les partitions, fdisk sur le disque externe:
 	> w
 
 
+Formatter les partitions:
+
+	$ sudo mkfs -t ext4 /dev/sda1
+	$ sudo mkfs -t ext4 /dev/sda2
+
+
+Monter le disque externe, cloner le système d'exploitation:
+
+	$ mkdir /mnt/hdd1
+	$ rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /mnt/hdd1/system-backup
+
+
+Identifier les partitions (repérer PARTUUID):
+
+	$ sudo blkid
+
+
+
 
