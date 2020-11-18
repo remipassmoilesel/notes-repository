@@ -1,5 +1,12 @@
 # Installer Ubuntu ARM 20.04.1 LTS sur un Odroid XU-4
 
+Matériel:
+
+- Odroid XU4
+- Carte SD
+- Un disque dur externe
+
+
 Téléchargement l'image:
 
 
@@ -11,6 +18,11 @@ Flasher un carte micro SD:
 
 	$ sudo dd if=ubuntu-arm.iso of=/dev/mmcblk0 bs=4096 && sync
 
+
+
+Se connecter:
+
+	$ ssh root@192.168.X.X
 
 
 Identifiants par défaut:
