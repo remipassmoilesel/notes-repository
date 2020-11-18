@@ -49,16 +49,27 @@ Formatter les partitions:
 	$ sudo mkfs -t ext4 /dev/sda2
 
 
-Monter le disque externe, cloner le système d'exploitation:
+Monter le disque externe, cloner le système d'exploitation (répeter la commande):
 
-	$ mkdir /mnt/hdd1
-	$ rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /mnt/hdd1/system-backup
+	$ mkdir /mnt/data1
+	$ mkdir /mnt/system
+
+
+	$ sudo mount /dev/sda2 /mnt/data1
+	$ sudo mount /dev/sda1 /mnt/system
+	$ rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / /mnt/data1
 
 
 Identifier les partitions (repérer PARTUUID):
 
 	$ sudo blkid
 
+
+Remplacer la valeur de root=UUID=XXXXX:
+
+	$ sudo nano media/boot/boot.ini
+	
+	root=UUID=XXXX
 
 
 
