@@ -1,6 +1,6 @@
 # Mémo Kubectl / Helm
 
-## Helm
+## Helm 2
 
 ### Commandes générales
 
@@ -36,6 +36,10 @@ Lister tous les types de ressources et leur raccourcis:
 
     $ kubectl api-resources
 
+
+Autres: 
+
+    $ kubectl get all
 
     $ kubectl apply deploymentname
     $ kubectl apply -f https://...
