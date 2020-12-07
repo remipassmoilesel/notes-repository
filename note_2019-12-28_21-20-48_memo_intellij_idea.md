@@ -1,5 +1,11 @@
 # Mémo Intellij Idea
 
+
+Installation sous Arch:
+
+	$ yay -S intellij-idea-ultimate-edition
+
+
 Rechercher remplacer avec un groupe de capture:
 
 	Rechercher:  <p>(?<title>.*? 2017)</p>
