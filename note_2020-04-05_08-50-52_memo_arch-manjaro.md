@@ -32,6 +32,11 @@ Supprimer les paquets non utiles:
 	$ pacman -Rsn $(pacman -Qdtq)
 
 
+## Paquets utiles
+
+	base-devel
+
+
 ## Installation
 
 Privilégier une installation avec connexion internet pour la configuration du matériel.
@@ -141,3 +146,10 @@ Créer un raccourci clavier lié à la commande:
 
 	$ xfce4-terminal --drop-down
 
+
+### Problème de boot après une mise à jour
+
+Si dû à un problème de kernel:
+1. maintenir SHIFT pendant le démarrage
+1. advanced settings
+1. puis choisir un autre kernel.
