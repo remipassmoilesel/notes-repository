@@ -1,32 +1,4 @@
-# Mémo Kubectl / Helm
-
-## Helm 2
-
-### Commandes générales
-
-    $ helm init
-    $ helm reset
-
-
-### Initialisation et destruction
-
-Créer un déploiement tiller sur un cluster:
-
-    $ helm init
-
-Prendre la main sur un pod existant:
-
-    $ helm init --client-only
-
-Détruire un déploiement tiller:
-
-    $ helm reset
-
-
-Attendre qu'un déploiement soit prêt:
-
-    $ helm upgrade --wait --timeout 500 ...
-
+# Mémo Kubernetes
 
 ## Kubectl
 
@@ -34,37 +6,26 @@ Attendre qu'un déploiement soit prêt:
 
 Lister tous les types de ressources et leur raccourcis:
 
+	$ kubectl config set-context --current --namespace=<name-of-namespace>
+
+    $ kubectl get events
     $ kubectl api-resources
+    $ kubectl get all --all-namespaces
+    $ kubectl get pods
+    $ kubectl get pod podname -o yaml
 
+	$ kubectl port-forward pod-name 8080
+	$ kubectl port-forward svc/name 8080
 
-Autres: 
-
-    $ kubectl get all
-
-    $ kubectl apply deploymentname
     $ kubectl apply -f https://...
     $ kubectl apply -f path/to/local
 
-    $ kubectl proxy
-    $ xdg-open http://127.0.0.1:8001/ui	     
-    
-    $ kubectl get pods
-    $ kubectl get pod podname     
     $ kubectl logs -f podname     
-
-    $ kubectl exec -ti podname ash
-    $ kubectl port-forward -n $namespace $pod_name_or_service $host_port:$target_port 
-    
-    $ kubectl get jobs     
-    $ kubectl get secrets     
-    $ kubectl get configmaps     
+    $ kubectl logs -f -l label=value      
 
     $ kubectl config view
     $ kubectl config get-contexts
     $ kubectl config use-context context-name
-
-    $ helm init
-    $ helm reset
 
 
 ### Pods
@@ -151,5 +112,49 @@ Forward de port vers un pod:
 Le port hôte peut être omis, un port au hasard sera choisi:
 
     $ kubectl port-forward $podname :80
+
+
+## Helm 2
+
+### Commandes générales
+
+    $ helm init
+    $ helm reset
+
+
+### Initialisation et destruction
+
+Créer un déploiement tiller sur un cluster:
+
+    $ helm init
+
+Prendre la main sur un pod existant:
+
+    $ helm init --client-only
+
+Détruire un déploiement tiller:
+
+    $ helm reset
+
+
+Attendre qu'un déploiement soit prêt:
+
+    $ helm upgrade --wait --timeout 500 ...
+
+
+## Kustomize
+
+Supprimer toutes les ressources:     
+
+	$ kustomize build overlays/ava-staging | kubectl delete -f -
+
+
+## Recommendations pour installer Kubernetes
+
+Désactiver le swap est indispensable si les composants maitres ne sont pas gérés:     
+
+	$ sudo vim /etc/fstab
+
+	--> Commenter la ligne swap
 
 
