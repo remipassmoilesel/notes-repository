@@ -153,3 +153,11 @@ Si dû à un problème de kernel:
 1. maintenir SHIFT pendant le démarrage
 1. advanced settings
 1. puis choisir un autre kernel.
+
+
+### Problème de clé après trop de temps sans mise à jour
+
+```
+$ sudo pacman-key --populate archlinux
+$ sudo pacman -Sy archlinux-keyring
+```
