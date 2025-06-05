@@ -158,6 +158,14 @@ Si dû à un problème de kernel:
 ### Problème de clé après trop de temps sans mise à jour
 
 ```
-$ sudo pacman-key --populate archlinux
-$ sudo pacman -Sy archlinux-keyring
+$ sudo pacman -Sy archlinux-keyring manjaro-keyrings
+```
+
+Sinon: 
+
+```
+sudo cp -f /etc/pacman.conf /etc/pacman.conf.orig                                                         sudo sed -i 's/SigLevel.*/SigLevel = Never/' /etc/pacman.conf
+sudo pacman -Syy gnupg archlinux-keyring manjaro-keyring --ignore manjaro-system
+sudo mv -f /etc/pacman.conf.orig /etc/pacman.conf
+sudo pacman -Syu
 ```
