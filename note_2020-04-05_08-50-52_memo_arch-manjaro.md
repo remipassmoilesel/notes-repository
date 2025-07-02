@@ -153,3 +153,19 @@ Si dû à un problème de kernel:
 1. maintenir SHIFT pendant le démarrage
 1. advanced settings
 1. puis choisir un autre kernel.
+
+
+### Problème de clé après trop de temps sans mise à jour
+
+```
+$ sudo pacman -Sy archlinux-keyring manjaro-keyrings
+```
+
+Sinon: 
+
+```
+sudo cp -f /etc/pacman.conf /etc/pacman.conf.orig                                                         sudo sed -i 's/SigLevel.*/SigLevel = Never/' /etc/pacman.conf
+sudo pacman -Syy gnupg archlinux-keyring manjaro-keyring --ignore manjaro-system
+sudo mv -f /etc/pacman.conf.orig /etc/pacman.conf
+sudo pacman -Syu
+```
